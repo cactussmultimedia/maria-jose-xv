@@ -204,8 +204,36 @@
 
   .lb-center {
     display: none; position: fixed; inset: 0; z-index: 2000;
-    background: rgba(10,5,5,0.96); backdrop-filter: blur(12px);
+    background-color: #1a0a0f;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(212,137,154,0.15) 0px, rgba(212,137,154,0.15) 8px,
+        transparent 8px, transparent 16px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(201,168,76,0.12) 0px, rgba(201,168,76,0.12) 8px,
+        transparent 8px, transparent 16px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px,
+        transparent 1px, transparent 18px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px,
+        transparent 1px, transparent 18px
+      );
+    background-size: 18px 18px, 18px 18px, 18px 18px, 18px 18px;
+    animation: shimmer 3s linear infinite;
+    backdrop-filter: blur(2px);
     align-items: center; justify-content: center;
+  }
+  @keyframes shimmer {
+    0%   { background-position: 0 0, 0 0, 0 0, 0 0; }
+    100% { background-position: 18px 18px, -18px 18px, 0 18px, 18px 0; }
   }
   .lb-center.active { display: flex; }
   .lb-center-close {
