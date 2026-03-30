@@ -360,7 +360,7 @@ const romanos = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","
 const lbCenter = document.getElementById("lbCenter");
 const mosaic = document.getElementById("mosaic");
 const finalCanvas = document.getElementById("finalCanvas");
-function cerrarCenter(){ lbCenter.classList.remove("active"); document.body.style.overflow=""; mosaic.innerHTML=""; finalCanvas.style.display="none"; finalCanvas.style.opacity="0"; }
+function cerrarCenter(){ lbCenter.classList.remove("active"); document.body.style.overflow=""; mosaic.innerHTML=""; mosaic.style.opacity="1"; finalCanvas.style.display="none"; finalCanvas.style.opacity="0"; }
 document.getElementById("centerPhoto").addEventListener("click", () => { lbCenter.classList.add("active"); document.body.style.overflow="hidden"; iniciarReveal(); });
 document.getElementById("lbCenterClose").addEventListener("click", cerrarCenter);
 lbCenter.addEventListener("click", e => { if(e.target===lbCenter) cerrarCenter(); });
