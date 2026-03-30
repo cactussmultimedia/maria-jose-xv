@@ -358,7 +358,7 @@ lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;});
 lb.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>40) dx<0?sig():ant(); });
 </script>
 
-<div class="lb-center" id="lbCenter">
+<div class="lb-center" id="lbCenter"><div class="lb-mosaic-bg" id="lbMosaicBg"></div>
   <button class="lb-center-close" id="lbCenterClose">✕</button>
   <div class="mosaic" id="mosaic"></div>
   <canvas id="finalCanvas"></canvas>
@@ -368,8 +368,8 @@ const romanos = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","
 const lbCenter = document.getElementById("lbCenter");
 const mosaic = document.getElementById("mosaic");
 const finalCanvas = document.getElementById("finalCanvas");
-function cerrarCenter(){ lbCenter.classList.remove("active"); document.body.style.overflow=""; mosaic.innerHTML=""; mosaic.style.opacity="1"; finalCanvas.style.display="none"; finalCanvas.style.opacity="0"; }
-document.getElementById("centerPhoto").addEventListener("click", () => { lbCenter.classList.add("active"); document.body.style.overflow="hidden"; iniciarReveal(); });
+function cerrarCenter(){ lbCenter.classList.remove("active"); document.body.style.overflow=""; mosaic.innerHTML=""; mosaic.style.opacity="1"; finalCanvas.style.display="none"; finalCanvas.style.opacity="0"; document.getElementById("lbMosaicBg").classList.remove("visible"); }
+document.getElementById("centerPhoto").addEventListener("click", () => { lbCenter.classList.add("active"); document.body.style.overflow="hidden"; setTimeout(()=>document.getElementById("lbMosaicBg").classList.add("visible"),100); iniciarReveal(); });
 document.getElementById("lbCenterClose").addEventListener("click", cerrarCenter);
 lbCenter.addEventListener("click", e => { if(e.target===lbCenter) cerrarCenter(); });
 document.addEventListener("keydown", e => { if(lbCenter.classList.contains("active")&&e.key==="Escape") cerrarCenter(); });
