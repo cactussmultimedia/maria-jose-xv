@@ -309,7 +309,7 @@ paquetes.forEach((pkg, i) => {
   const el  = document.createElement('div');
   el.className = 'thumb';
   el.style.cssText = `left:${cx}%;top:${cy}%;transform:translate(-50%,-50%);animation:fadeIn 0.6s ease forwards ${1.5+i*0.1}s;`;
-  el.innerHTML = `<img src="${pkg.fotos[0]}" alt="${pkg.nombre}" onerror="this.parentElement.style.background='linear-gradient(135deg,#f2c4ce,#e8d5a3)'"><span class="thumb-label">${pkg.nombre}</span><span class="thumb-badge">${pkg.fotos.length}</span>`;
+  el.innerHTML = `<img src="${pkg.fotos[0]}" alt="${pkg.nombre}" onerror="this.parentElement.style.background='linear-gradient(135deg,#f2c4ce,#e8d5a3)'"><span class="thumb-label">${pkg.nombre}</span>`;
   el.addEventListener('click', () => abrirLightbox(i, 0));
   wrap.appendChild(el);
 });
